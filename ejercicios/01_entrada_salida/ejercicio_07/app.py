@@ -50,16 +50,52 @@ class App(customtkinter.CTk):
         self.btn_dividir.grid(row=5, pady=10, columnspan=2, sticky="nsew")
 
     def btn_sumar_on_click(self):
-        pass
+        operador_a_texto = self.txt_operador_a.get()
+        operador_b_texto = self.txt_operador_b.get()
+        operador_a_numero = int(operador_a_texto)
+        operador_b_numero = int(operador_b_texto)
+
+        resultado_suma_numero = operador_a_numero + operador_b_numero
+
+        mensaje_suma = "El resultado de la suma es: {0}" .format(resultado_suma_numero)
+
+        alert("Titulo", mensaje_suma)
 
     def btn_restar_on_click(self):
-        pass
+        operador_a_texto = self.txt_operador_a.get()
+        operador_b_texto = self.txt_operador_b.get()
+        operador_a_numero = int(operador_a_texto)
+        operador_b_numero = int(operador_b_texto)
+
+        resultado_resta_numero = operador_a_numero - operador_b_numero
+
+        mensaje_resta = "El resultado de la resta es: {0}" .format(resultado_resta_numero)
+
+        alert("Titulo", mensaje_resta)
 
     def btn_multiplicar_on_click(self):
-        pass
+        operador_a_texto = self.txt_operador_a.get()
+        operador_b_texto = self.txt_operador_b.get()
+        operador_a_numero = int(operador_a_texto)
+        operador_b_numero = int(operador_b_texto)
+
+        resultado_multiplicacion_numero = operador_a_numero * operador_b_numero
+
+        mensaje_multiplicacion = "El resultado de la multiplicacion es: {0}" .format(resultado_multiplicacion_numero)
+
+        alert("Titulo", mensaje_multiplicacion)
 
     def btn_dividir_on_click(self):
-        pass
+        operador_a_texto = self.txt_operador_a.get()
+        operador_b_texto = self.txt_operador_b.get()
+        operador_a_numero = int(operador_a_texto)
+        operador_b_numero = int(operador_b_texto)
+
+        resultado_division_numero = operador_a_numero / operador_b_numero
+
+        mensaje_division = "El resultado de la division es: {0}" .format(resultado_division_numero)
+
+        alert("Titulo", mensaje_division)
         
 if __name__ == "__main__":
     app = App()

@@ -23,13 +23,13 @@ class App(customtkinter.CTk):
         # configure window
         self.title("UTN FRA")
        
-        self.btn_mostrar = customtkinter.CTkButton(master=self, text="revelar", command=self.btn_mostrar_on_click)
+        self.btn_mostrar = customtkinter.CTkButton(master=self, text="Mostrar", command=self.btn_mostrar_on_click)
         self.btn_mostrar.grid(row=2, pady=20, columnspan=2, sticky="nsew")
 
 
     def btn_mostrar_on_click(self):
-        pass
-        
+        dato_prompt = prompt("Ej 2", "Ingrese un dato")
+        alert("Titulo", dato_prompt)
         
     
 if __name__ == "__main__":

@@ -33,7 +33,17 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        
+        self.txt_nombre.delete(0,1000)
+
+        nombre = prompt("Titulo", "Ingrese su nombre")
+
+        valor = nombre
+
+        self.txt_nombre.insert(0, valor)
+
+
+            
         
     
 if __name__ == "__main__":
