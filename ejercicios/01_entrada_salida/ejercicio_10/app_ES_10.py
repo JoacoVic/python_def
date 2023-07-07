@@ -40,7 +40,16 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        importe_texto = self.txt_importe.get()
+        descuento_texto = self.txt_descuento.get()
+        importe_numero = float(importe_texto)
+        descuento_numero = float(descuento_texto)
+
+        descuento_pesos = importe_numero * descuento_numero / 100
+        importe_resultado_numero = importe_numero - descuento_pesos
+        mensaje = "El importe actualizado es: {0}" .format(importe_resultado_numero)
+
+        alert("Titulo", mensaje)
         
     
 if __name__ == "__main__":
