@@ -63,7 +63,29 @@ class App(customtkinter.CTk):
         self.btn_calcular.grid(row=3, pady=10, columnspan=2, sticky="nsew")
 
     def btn_calcular_on_click(self):
-        pass
+        largo = self.txt_largo.get()
+        ancho = self.txt_ancho.get()
+
+        largo = int(largo)
+        ancho = int(ancho)
+
+        m2 = largo * ancho
+
+        metros_lineales = (largo * 2) + (ancho * 2)
+
+        quebrachos_gruesos = (metros_lineales / 250) + 4
+
+        quebrachos_finos = (metros_lineales / 12) - quebrachos_gruesos
+
+        cantidad_varillas = metros_lineales / 2
+
+        cantidad_alambre = metros_lineales * 7
+
+        mensaje = f"El terreno tiene {m2} m2 y {metros_lineales} metros lineales. "
+        mensaje += f"Se necesitan {quebrachos_gruesos} postes de quebracho grueso de 2.4 mts, y {quebrachos_finos} postes de quebracho fino de 2.2 mts. "
+        mensaje += f"Se requieren {cantidad_varillas} varillas y {cantidad_alambre} mts de alambre 17/15."
+
+        alert("Titulo", mensaje)
 
 
 if __name__ == "__main__":
