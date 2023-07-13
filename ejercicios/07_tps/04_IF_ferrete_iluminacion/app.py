@@ -41,54 +41,139 @@ class App(customtkinter.CTk):
         marca = self.combobox_marca.get()
         cantidad = self.combobox_cantidad.get()
         cantidad = float(cantidad)
+        precio = 800
+
+        #               1ER INTENTO CON IF POR MI CUENTA (SÉ QUE ESTÁ MAL)
+
+
 
         # Cálculos
 
-        valor = 800
+        # valor = 800
 
-        total_base = cantidad * valor
+        # total_base = cantidad * valor
 
-        A = total_base - (total_base * 0.50)
+        # A = total_base - (total_base * 0.50)
 
-        B_arg = total_base - (total_base * 0.40)
-        B_otros = total_base - (total_base * 0.30)
+        # B_arg = total_base - (total_base * 0.40)
+        # B_otros = total_base - (total_base * 0.30)
 
-        C_arg_fel = total_base - (total_base * 0.25)
-        C_otros = total_base - (total_base * 0.20)
+        # C_arg_fel = total_base - (total_base * 0.25)
+        # C_otros = total_base - (total_base * 0.20)
 
-        D_arg = total_base - (total_base * 0.15)
-        D_fel = total_base - (total_base * 0.10)
-        D_otros = total_base - (total_base * 0.05)
-        # IF
+        # D_arg = total_base - (total_base * 0.15)
+        # D_fel = total_base - (total_base * 0.10)
+        # D_otros = total_base - (total_base * 0.05)
+        # # IF
+
+        # if cantidad >= 6:
+        #     mensaje = f"El importe final es de {total_a:.2f}"
+        # else:
+        #     if cantidad == 5:
+        #         if marca == "ArgentinaLuz":
+        #             mensaje = f"El importe es de {B_arg:.2f}"
+        #         else:
+        #             mensaje = f"El importe es de {B_otros:.2f}"
+        #     else:
+        #         if cantidad == 4:
+        #             if marca == "ArgentinaLuz" or "FelipeLamparas":
+        #                 mensaje = f"El importe es de {C_arg_fel:.2f}"
+        #             else:
+        #                 mensaje = f"El importe es de {C_otros:.2f}"
+        #         else:
+        #             if cantidad == 3:
+        #                 if marca == "ArgentinaLuz":
+        #                     mensaje = f"El importe es de {D_arg}"
+        #                 else:
+        #                     if marca == "FelipeLamparas":
+        #                         mensaje = f"El importe es de {D_fel}"
+        #                     else:
+        #                         mensaje = f"El importe es de {D_otros}"
+        #             else:
+        #                 mensaje = f"El importe es de {total_base}"
+
+
+        # alert("Titulo", mensaje)
+
+
+
+
+        #                  SEGUNDO INTENTO CON IF (BIEN HECHO)
+
+
+
+
+        # if cantidad >= 6:
+        #     descuento = 0.5
+        # else:
+        #     if cantidad == 5:
+        #         if marca == "ArgentinaLuz":
+        #             descuento = 0.4
+        #         else:
+        #             descuento = 0.3
+        #     else:
+        #         if cantidad == 4:
+        #             if marca == "ArgentinaLuz" or marca == "FelipeLamparas":
+        #                 descuento = 0.25
+        #             else:
+        #                 descuento = 0.20
+        #         else:
+        #             if cantidad == 3:
+        #                 if marca == "ArgentinaLuz":
+        #                     descuento = 0.15
+        #                 else:
+        #                     if marca == "FelipeLamparas":
+        #                         descuento = 0.10
+        #                     else:
+        #                         descuento = 0.05
+
+        
+        # precio_descuento = precio - (precio * descuento)
+        # precio_final = precio_descuento * cantidad
+
+        # if precio_final > 4000:
+        #     precio_final = precio_final - (precio_final * 0.05)
+
+        # alert("Titulo", f"El precio final es {precio_final}")
+
+        #               1ER INTENTO CON ELIF (BIEN HECHO)
+
+
+
 
         if cantidad >= 6:
-            mensaje = f"El importe final es de {total_a:.2f}"
-        else:
-            if cantidad == 5:
-                if marca == "ArgentinaLuz":
-                    mensaje = f"El importe es de {B_arg:.2f}"
-                else:
-                    mensaje = f"El importe es de {B_otros:.2f}"
+            descuento = 0.5
+        elif cantidad == 5:
+            if marca == "ArgentinaLuz":
+                descuento = 0.4
             else:
-                if cantidad == 4:
-                    if marca == "ArgentinaLuz" or "FelipeLamparas":
-                        mensaje = f"El importe es de {C_arg_fel:.2f}"
-                    else:
-                        mensaje = f"El importe es de {C_otros:.2f}"
-                else:
-                    if cantidad == 3:
-                        if marca == "ArgentinaLuz":
-                            mensaje = f"El importe es de {D_arg}"
-                        else:
-                            if marca == "FelipeLamparas":
-                                mensaje = f"El importe es de {D_fel}"
-                            else:
-                                mensaje = f"El importe es de {D_otros}"
-                    else:
-                        mensaje = f"El importe es de {total_base}"
+                descuento = 0.3
+        elif cantidad == 4:
+            if marca == "ArgentinaLuz" or marca == "FelipeLamparas":
+                descuento = 0.25
+            else:
+                descuento = 0.20
+        elif cantidad == 3:
+            if marca == "ArgentinaLuz":
+                descuento = 0.15
+            elif marca == "FelipeLamparas":
+                descuento = 0.10
+            else:
+                descuento = 0.05
+        else:
+            descuento = 0
+        
+
+        precio_descuento = precio - (precio * descuento)
+        precio_final = precio_descuento * cantidad
+
+        if precio_final > 4000:
+            precio_final = precio_final - (precio_final * 0.05)
+
+        alert("Titulo", f"El precio final es {precio_final}")
 
 
-        alert("Titulo", mensaje)
+            
         
     
 if __name__ == "__main__":
