@@ -38,7 +38,57 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
+        marca = self.combobox_marca.get()
+        cantidad = self.combobox_cantidad.get()
+        cantidad = float(cantidad)
+
+        # Cálculos
+
+        valor = 800
+
+        total_base = cantidad * valor
+
+        A = total_base - (total_base * 0.50)
+
+        B_arg = total_base - (total_base * 0.40)
+        B_otros = total_base - (total_base * 0.30)
+
+        C_arg_fel = total_base - (total_base * 0.25)
+        C_otros = total_base - (total_base * 0.20)
+
+        D_arg = total_base - (total_base * 0.15)
+        D_fel = total_base - (total_base * 0.10)
+        D_otros = total_base - (total_base * 0.05)
+        # IF
+
+        if cantidad >= 6:
+            mensaje = f"El importe final es de {total_a:.2f}"
+        else:
+            if cantidad == 5:
+                if marca == "ArgentinaLuz":
+                    mensaje = f"El importe es de {B_arg:.2f}"
+                else:
+                    mensaje = f"El importe es de {B_otros:.2f}"
+            else:
+                if cantidad == 4:
+                    if marca == "ArgentinaLuz" or "FelipeLamparas":
+                        mensaje = f"El importe es de {C_arg_fel:.2f}"
+                    else:
+                        mensaje = f"El importe es de {C_otros:.2f}"
+                else:
+                    if cantidad == 3:
+                        if marca == "ArgentinaLuz":
+                            mensaje = f"El importe es de {D_arg}"
+                        else:
+                            if marca == "FelipeLamparas":
+                                mensaje = f"El importe es de {D_fel}"
+                            else:
+                                mensaje = f"El importe es de {D_otros}"
+                    else:
+                        mensaje = f"El importe es de {total_base}"
+
+
+        alert("Titulo", mensaje)
         
     
 if __name__ == "__main__":

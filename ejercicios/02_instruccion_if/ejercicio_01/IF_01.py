@@ -34,8 +34,24 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        """
+        Operadores relacionales
+        > mayor
+        < menor
+        >=mayor o igual
+        <= menor o igual
+        == igual
+        != distinto
+        """
+        edad = self.txt_edad.get()
+        edad = int(edad)
 
+        if edad == 18:
+            alert ("Titulo", "Usted tiene 18 años")
+
+        
+        # # if divisor == 0:
+        #     alert("Error", "No se puede dividir por cero")
         
         
     
