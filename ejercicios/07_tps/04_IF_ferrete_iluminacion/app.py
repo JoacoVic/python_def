@@ -40,7 +40,7 @@ class App(customtkinter.CTk):
     def btn_calcular_on_click(self):
         marca = self.combobox_marca.get()
         cantidad = self.combobox_cantidad.get()
-        cantidad = float(cantidad)
+        cantidad = int(cantidad)
         precio = 800
 
         #               1ER INTENTO CON IF POR MI CUENTA (SÉ QUE ESTÁ MAL)
@@ -141,27 +141,59 @@ class App(customtkinter.CTk):
 
 
 
-        if cantidad >= 6:
-            descuento = 0.5
-        elif cantidad == 5:
-            if marca == "ArgentinaLuz":
-                descuento = 0.4
-            else:
-                descuento = 0.3
-        elif cantidad == 4:
-            if marca == "ArgentinaLuz" or marca == "FelipeLamparas":
-                descuento = 0.25
-            else:
-                descuento = 0.20
-        elif cantidad == 3:
-            if marca == "ArgentinaLuz":
-                descuento = 0.15
-            elif marca == "FelipeLamparas":
-                descuento = 0.10
-            else:
-                descuento = 0.05
-        else:
-            descuento = 0
+        # if cantidad >= 6:
+        #     descuento = 0.5
+        # elif cantidad == 5:
+        #     if marca == "ArgentinaLuz":
+        #         descuento = 0.4
+        #     else:
+        #         descuento = 0.3
+        # elif cantidad == 4:
+        #     if marca == "ArgentinaLuz" or marca == "FelipeLamparas":
+        #         descuento = 0.25
+        #     else:
+        #         descuento = 0.20
+        # elif cantidad == 3:
+        #     if marca == "ArgentinaLuz":
+        #         descuento = 0.15
+        #     elif marca == "FelipeLamparas":
+        #         descuento = 0.10
+        #     else:
+        #         descuento = 0.05
+        # else:
+        #     descuento = 0
+
+        #                               1ER INTENTO CON MATCH
+
+        match cantidad:
+            case 6:
+                descuento = 0.5
+            case 5:
+                match marca:
+                    case "ArgentinaLuz":
+                        descuento = 0.4
+                    case _:
+                        descuento = 0.3
+            case 4:
+                match marca:
+                    case "ArgentinaLuz" | "FelipeLamparas":
+                        descuento = 0.25
+                    case _:
+                        descuento = 0.2
+            case 3:
+                match marca:
+                    case "ArgentinaLuz":
+                        descuento = 0.15
+                    case "FelipeLamparas":
+                        descuento = 0.1
+                    case _:
+                        descuento = 0.05
+            case 1 | 2:
+                descuento = 0
+            case _:
+                descuento = 0.5
+
+
         
 
         precio_descuento = precio - (precio * descuento)
