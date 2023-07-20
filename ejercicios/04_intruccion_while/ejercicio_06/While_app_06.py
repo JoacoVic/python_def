@@ -31,19 +31,35 @@ class App(customtkinter.CTk):
 
 
     def btn_comenzar_ingreso_on_click(self):
-        cantidad_necesaria = 5
-        suma_acumulada = 0
-        cantidad_ingresada = 0
+        # cantidad_necesaria = 5
+        # suma_acumulada = 0
+        # cantidad_ingresada = 0
+        # promedio = 0
+
+        # while cantidad_ingresada < cantidad_necesaria:
+        #      numero = prompt(title="por favor",prompt="ingrese un numero")
+        #      suma_acumulada += int(numero)
+        #      cantidad_ingresada += 1
+        # promedio = suma_acumulada / cantidad_necesaria
+        # self.txt_suma_acumulada.delete(0, tkinter.END)
+        # self.txt_suma_acumulada.insert(0, suma_acumulada)
+        # self.txt_promedio.delete(0, tkinter.END)
+        # self.txt_promedio.insert(0, promedio)
+
+        contador = 0
+        acumulador = 0
         promedio = 0
 
-        while cantidad_ingresada < cantidad_necesaria:
-             numero = prompt(title="por favor",prompt="ingrese un numero")
-             suma_acumulada += int(numero)
-             cantidad_ingresada += 1
-        promedio = suma_acumulada / cantidad_necesaria
-        self.txt_suma_acumulada.delete(0, tkinter.END)
-        self.txt_suma_acumulada.insert(0, suma_acumulada)
-        self.txt_promedio.delete(0, tkinter.END)
+        while contador < 5:
+            contador += 1
+            numero_ingresado = int(prompt("Titulo", "Ingrese un numero"))
+            acumulador += numero_ingresado
+
+        promedio = acumulador / contador
+        
+        self.txt_suma_acumulada.delete(0, 100)
+        self.txt_promedio.delete(0, acumulador)
+        self.txt_suma_acumulada.insert(0, acumulador)
         self.txt_promedio.insert(0, promedio)
 
 
