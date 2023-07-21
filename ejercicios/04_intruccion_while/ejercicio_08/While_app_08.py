@@ -48,10 +48,10 @@ class App(customtkinter.CTk):
             elif numeros_ingresados < 0:
                 producto *= numeros_ingresados
 
-            self.txt_suma_acumulada.delete(0, 100)
-            self.txt_suma_acumulada.insert(0, suma_acumulada)
-            self.txt_producto.delete(0, 100)
-            self.txt_producto.insert(0, producto)
+        self.txt_suma_acumulada.delete(0, 100)
+        self.txt_suma_acumulada.insert(0, suma_acumulada)
+        self.txt_producto.delete(0, 100)
+        self.txt_producto.insert(0, producto)
 
 
 

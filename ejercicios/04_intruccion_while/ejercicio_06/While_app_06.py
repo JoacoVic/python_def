@@ -51,8 +51,8 @@ class App(customtkinter.CTk):
         promedio = 0
 
         while contador < 5:
-            contador += 1
             numero_ingresado = int(prompt("Titulo", "Ingrese un numero"))
+            contador += 1
             acumulador += numero_ingresado
 
         promedio = acumulador / contador

@@ -57,10 +57,10 @@ class App(customtkinter.CTk):
         # self.txt_minimo.insert(0, minimo)
         # self.txt_maximo.insert(0, maximo)
 
-        numero_ingresado = ""
+        numero_ingresado = 0
         maximo = 0
         minimo = 0
-        bandera_primera_vez = True
+        bandera = True
 
         while numero_ingresado != None:
             numero_ingresado = prompt("Titulo", "Ingrese un numero")
@@ -68,12 +68,16 @@ class App(customtkinter.CTk):
             if numero_ingresado != None:
                 numero_ingresado = int(numero_ingresado)
 
-                if bandera_primera_vez == True:
+                if bandera == True:
                     minimo = numero_ingresado
                     maximo = numero_ingresado
-                    bandera_primera_vez = False
+                    bandera = False
+
                 if numero_ingresado > maximo:
                     maximo = numero_ingresado
+
+                elif numero_ingresado < minimo:
+                    minimo = numero_ingresado
 
         self.txt_maximo.delete(0, 100)
         self.txt_minimo.delete(0, 100)

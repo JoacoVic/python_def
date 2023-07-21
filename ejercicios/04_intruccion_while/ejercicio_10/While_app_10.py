@@ -40,7 +40,7 @@ class App(customtkinter.CTk):
         contador_ceros = 0
         diferencia = 0
 
-        numero_ingresado = ""
+        numero_ingresado = 0
 
         while numero_ingresado != None:
             numero_ingresado = prompt("Titulo", "Ingrese un numero")

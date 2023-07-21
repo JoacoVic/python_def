@@ -22,7 +22,21 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        for _ in range(10000):
+            respuesta = question("Pregunta", "¿Desea continuar?")
+            if respuesta == False:
+                break
+            else:
+                continue
+        
+        # pregunta = question("Titulo", "¿Desea continuar?")
+
+        # for _ in range(0,10000):
+        #     if pregunta == True:
+        #         question("Titulo", "¿Desea continuar?")
+        #         continue
+        #     else:
+        #         break
         
     
 if __name__ == "__main__":
