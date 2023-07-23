@@ -24,7 +24,7 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
+        alert("Titulo", f"La sumatoria de los numeros en la lista es: {sum(self.lista_datos)}")
     
 if __name__ == "__main__":
     app = App()

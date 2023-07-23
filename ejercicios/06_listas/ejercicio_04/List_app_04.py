@@ -24,7 +24,11 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
+        minimo = min(self.lista_datos)
+        alert("Titulo", f"El numero mínimo es: {minimo}")
+
+
+        # alert("Titulo", f"El numero mínimo es: {min(self.lista_datos)}")
     
     
 if __name__ == "__main__":
