@@ -39,7 +39,7 @@ class App(customtkinter.CTk):
         contador_numeros_pares = 0
 
         while numero_pedido == None or not numero_pedido.isdigit():
-            numero_pedido = prompt("Numero", "Ingrese un numero")
+            numero_pedido = prompt("Numero", "Ingresa un numero")
 
         numero_pedido = int(numero_pedido)
 

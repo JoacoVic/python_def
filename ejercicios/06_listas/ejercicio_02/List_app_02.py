@@ -44,19 +44,31 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        for i in self.lista_datos:
-            alert("Titulo", f"{i}")
+        for item in self.lista_datos:
+            alert("Titulo", f"{item}")
         
 
         
     def btn_cargar_on_click(self):
-        contador = 0
-        while contador < 3:
-            elementos = prompt("Titulo", "Ingrese datos para acumular en la lista") 
+        self.lista_datos.clear()
+        
+        for item in range(3):
+            numero_ingresado = prompt("Titulo", "Ingrese un numero")
 
-            self.lista_datos.append(elementos)
+            while not numero_ingresado or not numero_ingresado.isdigit():
+                numero_ingresado = prompt("Error", "Ingrese un numero")
+            self.lista_datos.append(int(numero_ingresado))
 
-            contador += 1
+        
+        
+        
+        # contador = 0
+        # while contador < 3:
+        #     elementos = prompt("Titulo", "Ingrese datos para acumular en la lista") 
+
+        #     self.lista_datos.append(elementos)
+
+        #     contador += 1
         
         
 
